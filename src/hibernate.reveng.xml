@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-schema="KAD"/>
+  <table-filter match-name="VRSTA_RADA"/>
+  <table-filter match-name="DJELATNIK"/>
+  <table-filter match-name="VRSTA_ZAPOSLENJA"/>
+  <table-filter match-name="RADNA_JEDINICA"/>
+  <table-filter match-name="POSAO"/>
+  <table-filter match-name="STRUCNA_SPREMA"/>
+  <table-filter match-name="STRUCNO_ZVANJE"/>
+  <table-filter match-name="VJERA"/>
+  <table-filter match-name="POSLOVNA_JEDINICA"/>
+  <table-filter match-name="BRACNO_STANJE"/>
+</hibernate-reverse-engineering>

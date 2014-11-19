@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 30, 2014 11:09:10 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="kadrovskaslike.PoslovnaJedinica" table="POSLOVNA_JEDINICA" schema="KAD" optimistic-lock="version">
+        <id name="pjePid" type="long">
+            <column name="PJE_PID" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="naziv" type="string">
+            <column name="NAZIV" length="200" not-null="true" />
+        </property>
+        <set name="radnaJedinicas" table="RADNA_JEDINICA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PJE_PID" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="kadrovskaslike.RadnaJedinica" />
+        </set>
+    </class>
+</hibernate-mapping>

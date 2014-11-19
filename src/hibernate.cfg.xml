@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@192.168.1.2:1521:ORCL</property>
+    <property name="hibernate.connection.username">kad</property>
+    <property name="hibernate.connection.password">kad</property>
+    <mapping resource="kadrovskaslike/VrstaRada.hbm.xml"/>
+    <mapping resource="kadrovskaslike/Vjera.hbm.xml"/>
+    <mapping resource="kadrovskaslike/RadnaJedinica.hbm.xml"/>
+    <mapping resource="kadrovskaslike/Posao.hbm.xml"/>
+    <mapping resource="kadrovskaslike/StrucnoZvanje.hbm.xml"/>
+    <mapping resource="kadrovskaslike/Djelatnik.hbm.xml"/>
+    <mapping resource="kadrovskaslike/PoslovnaJedinica.hbm.xml"/>
+    <mapping resource="kadrovskaslike/StrucnaSprema.hbm.xml"/>
+    <mapping resource="kadrovskaslike/VrstaZaposlenja.hbm.xml"/>
+    <mapping resource="kadrovskaslike/BracnoStanje.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

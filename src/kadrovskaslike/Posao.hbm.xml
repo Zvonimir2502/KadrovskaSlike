@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 30, 2014 11:09:10 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="kadrovskaslike.Posao" table="POSAO" schema="KAD" optimistic-lock="version">
+        <id name="posPid" type="long">
+            <column name="POS_PID" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="strucnaSprema" class="kadrovskaslike.StrucnaSprema" fetch="select">
+            <column name="SSP_PID" precision="15" scale="0">
+                <comment>&#138;ifra zaht.str.spreme</comment>
+            </column>
+        </many-to-one>
+        <property name="naziv" type="string">
+            <column name="NAZIV" length="200" not-null="true" />
+        </property>
+        <property name="ovlastenikZnr" type="java.lang.Boolean">
+            <column name="OVLASTENIK_ZNR" precision="1" scale="0" />
+        </property>
+        <property name="nazivNkz" type="string">
+            <column name="NAZIV_NKZ" length="200" />
+        </property>
+        <set name="djelatniks" table="DJELATNIK" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="POS_PID" precision="15" scale="0">
+                    <comment>&#138;ifra posla</comment>
+                </column>
+            </key>
+            <one-to-many class="kadrovskaslike.Djelatnik" />
+        </set>
+    </class>
+</hibernate-mapping>

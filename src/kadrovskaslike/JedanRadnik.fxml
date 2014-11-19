@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="305.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kadrovskaslike.JedanRadnikController">
+   <children>
+      <Pane layoutX="7.0" layoutY="7.0" prefHeight="297.0" prefWidth="671.0">
+         <children>
+            <SplitPane dividerPositions="0.336322869955157" prefHeight="296.0" prefWidth="671.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="277.0" prefWidth="222.0">
+                     <children>
+                        <ImageView fx:id="slikaView" fitHeight="294.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="441.0">
+                     <children>
+                        <Label fx:id="prezimeImeLbl" layoutX="14.0" layoutY="32.0" prefHeight="17.0" prefWidth="426.0" text="Prezime ime">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="matBrLbl" layoutX="14.0" layoutY="63.0" prefHeight="17.0" prefWidth="426.0" text="Matbr">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button id="ucitajSliku" fx:id="ucitajSliku" layoutX="14.0" layoutY="135.0" mnemonicParsing="false" text="Učitaj sliku" />
+                        <Button id="saveDb" fx:id="saveDb" layoutX="100.0" layoutY="135.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Sačuvaj promjene" visible="false" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

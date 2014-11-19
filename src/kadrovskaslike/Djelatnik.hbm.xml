@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 30, 2014 11:09:10 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="kadrovskaslike.Djelatnik" table="DJELATNIK" schema="KAD" optimistic-lock="version">
+        <id name="djePid" type="long">
+            <column name="DJE_PID" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="posao" class="kadrovskaslike.Posao" fetch="select">
+            <column name="POS_PID" precision="15" scale="0">
+                <comment>&#138;ifra posla</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="strucnaSprema" class="kadrovskaslike.StrucnaSprema" fetch="select">
+            <column name="SSP_PID" precision="15" scale="0">
+                <comment>&#138;ifra str.spreme</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="strucnoZvanje" class="kadrovskaslike.StrucnoZvanje" fetch="select">
+            <column name="SZV_PID" precision="15" scale="0">
+                <comment>&#138;ifra str.zvanja</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="radnaJedinica" class="kadrovskaslike.RadnaJedinica" fetch="select">
+            <column name="RJE_PID" precision="15" scale="0">
+                <comment>&#138;ifra mjesta tro&#154;ka</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="bracnoStanje" class="kadrovskaslike.BracnoStanje" fetch="select">
+            <column name="BRS_PID" precision="15" scale="0">
+                <comment>&#138;ifra bra&#232;nog stanja</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="vjera" class="kadrovskaslike.Vjera" fetch="select">
+            <column name="VJE_PID" precision="15" scale="0">
+                <comment>&#138;ifra vjere</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="vrstaRada" class="kadrovskaslike.VrstaRada" fetch="select">
+            <column name="VRR_PID" precision="15" scale="0">
+                <comment>&#138;ifra vrste rada</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="vrstaZaposlenja" class="kadrovskaslike.VrstaZaposlenja" fetch="select">
+            <column name="VRZ_PID" precision="15" scale="0">
+                <comment>&#138;ifra vrste zaposlenja</comment>
+            </column>
+        </many-to-one>
+        <property name="imeOca" type="string">
+            <column name="IME_OCA" length="50" />
+        </property>
+        <property name="imeMajke" type="string">
+            <column name="IME_MAJKE" length="50" />
+        </property>
+        <property name="jmbg" type="string">
+            <column name="JMBG" length="13" />
+        </property>
+        <property name="mjePidPrebivanja" type="java.lang.Long">
+            <column name="MJE_PID_PREBIVANJA" precision="15" scale="0">
+                <comment>&#138;ifra mjesta prebivanja</comment>
+            </column>
+        </property>
+        <property name="spol" type="string">
+            <column name="SPOL" length="1" not-null="true" />
+        </property>
+        <property name="datumZaposlenja" type="date">
+            <column name="DATUM_ZAPOSLENJA" length="7" />
+        </property>
+        <property name="datumOdlaska" type="date">
+            <column name="DATUM_ODLASKA" length="7" />
+        </property>
+        <property name="mjePidRodjenja" type="java.lang.Long">
+            <column name="MJE_PID_RODJENJA" precision="15" scale="0">
+                <comment>&#138;ifra mjesta ro&#240;.</comment>
+            </column>
+        </property>
+        <property name="adresa" type="string">
+            <column name="ADRESA" length="200" />
+        </property>
+        <property name="prezimeIme" type="string">
+            <column name="PREZIME_IME" length="200" not-null="true" />
+        </property>
+        <property name="datumRodjenja" type="date">
+            <column name="DATUM_RODJENJA" length="7" />
+        </property>
+        <property name="datumUpisa" type="date">
+            <column name="DATUM_UPISA" length="7">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="korPid" type="java.lang.Long">
+            <column name="KOR_PID" precision="15" scale="0">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="fotografija" type="blob">
+            <column name="FOTOGRAFIJA" />
+        </property>
+        <property name="brojOsIskaznice" type="string">
+            <column name="BROJ_OS_ISKAZNICE" length="20" />
+        </property>
+        <property name="radniStaz" type="string">
+            <column name="RADNI_STAZ" length="6">
+                <comment>sta&#158; prije Saponije</comment>
+            </column>
+        </property>
+        <property name="brojHzzo" type="string">
+            <column name="BROJ_HZZO" length="20" />
+        </property>
+        <property name="brojIskaznice" type="int">
+            <column name="BROJ_ISKAZNICE" precision="6" scale="0" not-null="true" unique="true" />
+        </property>
+        <property name="brojFotografije" type="java.lang.Short">
+            <column name="BROJ_FOTOGRAFIJE" precision="3" scale="0" />
+        </property>
+        <property name="nacPid" type="java.lang.Long">
+            <column name="NAC_PID" precision="15" scale="0">
+                <comment>&#138;ifra narodnosti</comment>
+            </column>
+        </property>
+        <property name="vrstaRada_1" type="java.lang.Boolean">
+            <column name="VRSTA_RADA" precision="1" scale="0">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="satiRada" type="java.lang.Boolean">
+            <column name="SATI_RADA" precision="1" scale="0">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="oib" type="string">
+            <column name="OIB" length="11" not-null="true" />
+        </property>
+        <property name="pravilnikRacunalo" type="java.lang.Boolean">
+            <column name="PRAVILNIK_RACUNALO" precision="1" scale="0">
+                <comment>radi li s ra&#232;unalom</comment>
+            </column>
+        </property>
+        <property name="prekidStaza" type="string">
+            <column name="PREKID_STAZA" length="6">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="vrstaZaposlenja_1" type="string">
+            <column name="VRSTA_ZAPOSLENJA" length="1">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="purPid" type="java.lang.Long">
+            <column name="PUR_PID" precision="15" scale="0">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="brojOsiguranja" type="string">
+            <column name="BROJ_OSIGURANJA" length="20">
+                <comment>br.zdravst.osiguranja</comment>
+            </column>
+        </property>
+        <property name="mirovinskiStup" type="string">
+            <column name="MIROVINSKI_STUP" length="1">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="bod" type="big_decimal">
+            <column name="BOD" precision="15" scale="3">
+                <comment>broj bodova</comment>
+            </column>
+        </property>
+        <property name="uzdrzavaneOsobe" type="java.lang.Long">
+            <column name="UZDRZAVANE_OSOBE" precision="15" scale="0">
+                <comment>osobni odbitak</comment>
+            </column>
+        </property>
+        <property name="uzdrzavaneOsobeKoef" type="big_decimal">
+            <column name="UZDRZAVANE_OSOBE_KOEF" precision="15" scale="3">
+                <comment>osobni odbitak</comment>
+            </column>
+        </property>
+        <property name="djeca" type="java.lang.Long">
+            <column name="DJECA" precision="15" scale="0">
+                <comment>osobni odbitak</comment>
+            </column>
+        </property>
+        <property name="djecaKoef" type="big_decimal">
+            <column name="DJECA_KOEF" precision="15" scale="3">
+                <comment>osobni odbitak</comment>
+            </column>
+        </property>
+        <property name="vrstaInvalidnosti" type="string">
+            <column name="VRSTA_INVALIDNOSTI" length="1">
+                <comment>osobni odbitak</comment>
+            </column>
+        </property>
+        <property name="iznosInvalidnosti" type="big_decimal">
+            <column name="IZNOS_INVALIDNOSTI" precision="15" scale="3">
+                <comment>osobni odbitak</comment>
+            </column>
+        </property>
+        <property name="telefon" type="string">
+            <column name="TELEFON" length="20" />
+        </property>
+        <property name="djeDopPid" type="java.lang.Long">
+            <column name="DJE_DOP_PID" precision="15" scale="0">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="djePorPid" type="java.lang.Long">
+            <column name="DJE_POR_PID" precision="15" scale="0">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="rsOsoPid" type="java.lang.Long">
+            <column name="RS_OSO_PID" precision="15" scale="0">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="rsOziPid" type="java.lang.Long">
+            <column name="RS_OZI_PID" precision="15" scale="0">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="rsOzsPid" type="java.lang.Long">
+            <column name="RS_OZS_PID" precision="15" scale="0">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="rsOzoPid" type="java.lang.Long">
+            <column name="RS_OZO_PID" precision="15" scale="0">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="invalidnostKoef" type="big_decimal">
+            <column name="INVALIDNOST_KOEF" precision="15" scale="3">
+                <comment>osobni odbitak</comment>
+            </column>
+        </property>
+        <property name="datumNaOdredjeno" type="date">
+            <column name="DATUM_NA_ODREDJENO" length="7">
+                <comment>dat.zapo&#154;ljav. na odr.vrijeme</comment>
+            </column>
+        </property>
+        <property name="rodPid" type="java.lang.Long">
+            <column name="ROD_PID" precision="15" scale="0">
+                <comment>&#138;ifra razloga odlaska</comment>
+            </column>
+        </property>
+        <property name="brojDanaGo" type="java.lang.Byte">
+            <column name="BROJ_DANA_GO" precision="2" scale="0">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="trajanjePoticaja" type="java.lang.Byte">
+            <column name="TRAJANJE_POTICAJA" precision="2" scale="0">
+                <comment>ne koristi se</comment>
+            </column>
+        </property>
+        <property name="brojDanaGoStarog" type="java.lang.Byte">
+            <column name="BROJ_DANA_GO_STAROG" precision="2" scale="0" />
+        </property>
+        <property name="mjePidRada" type="java.lang.Long">
+            <column name="MJE_PID_RADA" precision="15" scale="0">
+                <comment>&#138;ifra mjesta rada</comment>
+            </column>
+        </property>
+        <property name="oiDatumIzdavanja" type="date">
+            <column name="OI_DATUM_IZDAVANJA" length="7" />
+        </property>
+        <property name="oiVrijediDo" type="date">
+            <column name="OI_VRIJEDI_DO" length="7" />
+        </property>
+        <property name="oiIzdao" type="string">
+            <column name="OI_IZDAO" length="50" />
+        </property>
+        <property name="napomena" type="string">
+            <column name="NAPOMENA" length="1000" />
+        </property>
+        <property name="datumNaNeodredjeno" type="date">
+            <column name="DATUM_NA_NEODREDJENO" length="7">
+                <comment>Datum zap. na nedore&#240;eno vrijeme</comment>
+            </column>
+        </property>
+        <property name="probniRadOd" type="date">
+            <column name="PROBNI_RAD_OD" length="7" />
+        </property>
+        <property name="probniRadDo" type="date">
+            <column name="PROBNI_RAD_DO" length="7" />
+        </property>
+        <property name="pripravStazOd" type="date">
+            <column name="PRIPRAV_STAZ_OD" length="7" />
+        </property>
+        <property name="pripravStazDo" type="date">
+            <column name="PRIPRAV_STAZ_DO" length="7" />
+        </property>
+        <property name="strucniIspitBroj" type="string">
+            <column name="STRUCNI_ISPIT_BROJ" length="100" />
+        </property>
+        <property name="strucniIspitDatum" type="date">
+            <column name="STRUCNI_ISPIT_DATUM" length="7" />
+        </property>
+        <property name="tjednoRadnoVrijeme" type="java.lang.Byte">
+            <column name="TJEDNO_RADNO_VRIJEME" precision="2" scale="0" />
+        </property>
+        <property name="mirovanjeOd" type="date">
+            <column name="MIROVANJE_OD" length="7" />
+        </property>
+        <property name="mirovanjeDo" type="date">
+            <column name="MIROVANJE_DO" length="7" />
+        </property>
+        <property name="mirovanjeRazlog" type="string">
+            <column name="MIROVANJE_RAZLOG" length="200" />
+        </property>
+        <property name="zabranaNatjecanja" type="string">
+            <column name="ZABRANA_NATJECANJA" length="2" />
+        </property>
+        <property name="drugiPoslodavac" type="string">
+            <column name="DRUGI_POSLODAVAC" length="200" />
+        </property>
+        <property name="tjednoPunoRadnoVrijeme" type="java.lang.Byte">
+            <column name="TJEDNO_PUNO_RADNO_VRIJEME" precision="2" scale="0" />
+        </property>
+        <property name="tjednoNepunoRadnoVrijeme" type="java.lang.Byte">
+            <column name="TJEDNO_NEPUNO_RADNO_VRIJEME" precision="2" scale="0" />
+        </property>
+        <property name="dnevnoRadnoVrijeme" type="java.lang.Byte">
+            <column name="DNEVNO_RADNO_VRIJEME" precision="2" scale="0" />
+        </property>
+        <property name="dnevniRasporedPonPet" type="string">
+            <column name="DNEVNI_RASPORED_PON_PET" length="11" />
+        </property>
+        <property name="dnevniRasporedSub" type="string">
+            <column name="DNEVNI_RASPORED_SUB" length="11" />
+        </property>
+        <property name="smjenskiRadI" type="string">
+            <column name="SMJENSKI_RAD_I" length="11" />
+        </property>
+        <property name="smjenskiRadIi" type="string">
+            <column name="SMJENSKI_RAD_II" length="11" />
+        </property>
+        <property name="nocniRad" type="string">
+            <column name="NOCNI_RAD" length="11" />
+        </property>
+        <property name="trudnickoOd" type="date">
+            <column name="TRUDNICKO_OD" length="7" />
+        </property>
+        <property name="trudnickoDo" type="date">
+            <column name="TRUDNICKO_DO" length="7" />
+        </property>
+        <property name="nesposobnostUvjeti" type="string">
+            <column name="NESPOSOBNOST_UVJETI" length="200" />
+        </property>
+        <property name="drzavljanstvo" type="string">
+            <column name="DRZAVLJANSTVO" length="50" />
+        </property>
+        <property name="radnaDozvola" type="string">
+            <column name="RADNA_DOZVOLA" length="50" />
+        </property>
+        <property name="invalidnostUvjeti" type="string">
+            <column name="INVALIDNOST_UVJETI" length="200" />
+        </property>
+        <property name="invalidnostOd" type="date">
+            <column name="INVALIDNOST_OD" length="7" />
+        </property>
+        <property name="nesposobnostOd" type="date">
+            <column name="NESPOSOBNOST_OD" length="7" />
+        </property>
+        <property name="bivsePrezime" type="string">
+            <column name="BIVSE_PREZIME" length="500" />
+        </property>
+        <property name="dojenje" type="string">
+            <column name="DOJENJE" length="500" />
+        </property>
+        <property name="mjePidPu" type="java.lang.Long">
+            <column name="MJE_PID_PU" precision="15" scale="0" />
+        </property>
+        <property name="radInozemstvo" type="string">
+            <column name="RAD_INOZEMSTVO" length="500" />
+        </property>
+        <property name="produzenoMo" type="java.lang.Boolean">
+            <column name="PRODUZENO_MO" precision="1" scale="0" />
+        </property>
+        <property name="razlogPovecaniStaz" type="string">
+            <column name="RAZLOG_POVECANI_STAZ" length="500" />
+        </property>
+        <set name="radnaJedinicas" table="RADNA_JEDINICA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DJE_PID" precision="15" scale="0" />
+            </key>
+            <one-to-many class="kadrovskaslike.RadnaJedinica" />
+        </set>
+    </class>
+</hibernate-mapping>

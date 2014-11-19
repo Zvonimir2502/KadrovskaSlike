@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.2.final using JasperReports Library version 5.6.1  -->
+<!-- 2014-11-18T15:12:43 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pregled_korisnika" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="392950dc-9185-4b3b-b9bb-6ec770afcd51">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Oracle _26"/>
+	<property name="ireport.jasperserver.url" value="http://192.168.1.143:8088/jasperserver/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.report.resource" value="/reports/samples/AllAccounts_files/AllAccountsReport"/>
+	<property name="ireport.jasperserver.reportUnit" value="/reports/samples/AllAccounts"/>
+	<property name="jdbc.url" value="jdbc:oracle:thin:@192.168.1.26:1521:XE"/>
+	<property name="jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+	<property name="db.username" value="sapadmin"/>
+	<property name="db.password" value="omiska"/>
+	<queryString>
+		<![CDATA[select USERNAME,NAZIV,EMAIL,STATUS
+from A_KORISNICI
+ORDER BY 1]]>
+	</queryString>
+	<field name="USERNAME" class="java.lang.String"/>
+	<field name="NAZIV" class="java.lang.String"/>
+	<field name="EMAIL" class="java.lang.String"/>
+	<field name="STATUS" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#FFFFFF" uuid="1f7ed92f-2dfa-4508-af88-8bd42559e243"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#006699" uuid="b072bf73-10f9-4a7a-9e1c-e67ab9a46f63"/>
+					<textElement>
+						<font fontName="Tahoma" size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Korisnici]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#006699" uuid="c5693161-5520-4ed1-8463-6f7cb8972527"/>
+					<textElement textAlignment="Right">
+						<font fontName="Tahoma" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[pregled korisnika]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="250d1f0b-5a34-4a88-94b9-ec14722efb0d"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="110" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="7f63d30d-0bdd-418f-bbac-aab071fd67ac"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[USERNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="110" y="0" width="206" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="fb6857a4-0bef-4cd0-a653-b8ad0825af02"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAZIV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="316" y="0" width="184" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="1907d619-3601-4053-8f1a-2145e0be76e8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="500" y="0" width="52" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="7abaa122-f0fa-4043-87ef-07a102bfc9b4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STATUS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="7dfad12c-5cea-4a82-bd86-8cf11422fb69"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="110" height="20" uuid="5febcadf-f18f-4dc1-a157-cf941735dab3"/>
+				<textElement>
+					<font fontName="Tahoma" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{USERNAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="110" y="0" width="206" height="20" uuid="6ec5d8fb-b069-48e3-a8bc-e1a3846792c4"/>
+				<textElement>
+					<font fontName="Tahoma" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAZIV}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="316" y="0" width="184" height="20" uuid="42bc6d18-401c-41ff-a680-df32e4dfd367"/>
+				<textElement>
+					<font fontName="Tahoma" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EMAIL}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="500" y="0" width="52" height="20" uuid="e134b790-7876-45c6-9ef3-4503a54b9bf2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{STATUS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="79215587-1715-45f9-984d-42805e8d2f2c"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Stranica "+$V{PAGE_NUMBER}+" od"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="d8287d84-dcc5-4406-b88c-71f557dc60ad"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MM.dd.yyyy HH:mm">
+				<reportElement x="0" y="4" width="100" height="13" uuid="19d0b021-ff03-4d53-bc11-c849f4b632bc"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

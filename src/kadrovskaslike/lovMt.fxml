@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="564.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kadrovskaslike.LovMtController">
+   <children>
+      <BorderPane layoutX="5.0" prefHeight="564.0" prefWidth="409.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <TextField fx:id="filter" prefHeight="25.0" prefWidth="355.0" text="\%" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </TextField>
+         </top>
+         <center>
+            <TableView fx:id="lovTbl" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </BorderPane.margin>
+            </TableView>
+         </center>
+         <bottom>
+            <Pane prefHeight="28.0" prefWidth="409.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnFind" layoutY="2.0" mnemonicParsing="false" text="Find" />
+                  <Button fx:id="btnOk" layoutX="179.0" layoutY="2.0" mnemonicParsing="false" text="OK" />
+                  <Button fx:id="btnCancel" layoutX="357.0" layoutY="2.0" mnemonicParsing="false" text="Cancel" />
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
