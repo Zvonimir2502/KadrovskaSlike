@@ -102,7 +102,7 @@ public class Report extends JFrame {
                 //JasperExportManager.exportReportToPdfFile(jasperPrint,rptpath +reportName + ".pdf" ); 
                 
                // jasperPrint = JasperFillManager.fillReport(rptpath +reportName + ".jasper", hm, con);
-                JasperViewer.viewReport(jasperPrint);
+                JasperViewer.viewReport(jasperPrint, false); 
             } catch (JRException e) {
                 e.printStackTrace();
             }

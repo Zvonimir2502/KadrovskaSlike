@@ -12,8 +12,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.Blob;
+import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Vector;
@@ -106,8 +109,31 @@ public class RadniciController implements Initializable, ControlledScreen  {
                 System.out.println("Jesam"+prezimeImeTxt.getText());
                 
                 runQueryBasedOnColumns();
-                String[] args = {};
-                TestReportCall.main(args);
+                
+                Connection connection = null;
+                Statement statement = null;         
+                try {
+                    connection = Database.getConnection();
+                    statement = connection.createStatement();
+                    HashMap parameterMap = new HashMap();
+                    parameterMap.put("rtitle", "Korisnici AMOS");//sending the report title as a parameter.
+                    Report rpt = new Report(parameterMap, connection);
+                    rpt.setReportName("Pregled_korisnika"); //productlist is the name of my jasper file.
+                    rpt.callReport();
+                } catch (Exception e2) {
+                    e2.printStackTrace();
+                } finally {
+                    try {
+                        statement.close();
+                        connection.close();
+                    } catch (Exception e3) {
+                        e3.printStackTrace();
+                    }
+                }                
+                
+                
+//                String[] args = {};
+//                TestReportCall.main(args);
                 
 //                InputStream stream = this.getClass().getResourceAsStream("/rpt/Pregled_korisnika.jasper");
 //                
