@@ -1,0 +1,4 @@
+KadrovskaSlike
+==============
+
+Java fx project
